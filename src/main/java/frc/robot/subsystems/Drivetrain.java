@@ -1,6 +1,3 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
 
@@ -26,7 +23,7 @@ public class Drivetrain extends SubsystemBase {
 
   //Sensor input varibles
 
-  public ExampleSubsystem() {
+  public Drivetrain() {
     this.myVictor1 = new WPI_VictorSPX(Constants.drivetrain1);
     this.myVictor2 = new WPI_VictorSPX(Constants.drivetrain2);
     this.myVictor3 = new WPI_VictorSPX(Constants.drivetrain3);
