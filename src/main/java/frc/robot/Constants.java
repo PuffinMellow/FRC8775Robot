@@ -14,11 +14,15 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static drivetrain1 = 1;
-    public static drivetrain2 = 2;
-    public static drivetrain3 = 3;
-    public static drivetrain4 = 4;
+    public static int drivetrain1 = 1;
+    public static int drivetrain2 = 2;
+    public static int drivetrain3 = 3;
+    public static int drivetrain4 = 4;
 
-    public static flywheel = 5;
-    public static revNeoKv = 473;
+    public static int flywheel = 5;
+    public static int revNeoKv = 473;
+
+    public static int frontConveyer = 8;
+    public static int backConveyer = 9;
+    
 }
