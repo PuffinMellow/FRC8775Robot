@@ -1,6 +1,7 @@
 
 package frc.robot.subsystems;
 
+import frc.robot.Constants;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
@@ -30,6 +31,7 @@ public class Drivetrain extends SubsystemBase {
     this.myVictor4 = new WPI_VictorSPX(Constants.drivetrain4);
     this.groupleft = new MotorControllerGroup(myVictor1, myVictor2);
     this.groupright = new MotorControllerGroup(myVictor3, myVictor4);
+    this.groupright.setInverted(true);
     this.robotDrive = new DifferentialDrive(groupright, groupleft);
   }
 

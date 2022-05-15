@@ -24,5 +24,6 @@ public final class Constants {
 
     public static int frontConveyer = 8;
     public static int backConveyer = 9;
+    public static doube
     
 }

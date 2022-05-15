@@ -1,5 +1,6 @@
 package frc.robot.subsystems;
 
+import frc.robot.Constants;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -12,6 +13,7 @@ public class Intake extends SubsystemBase {
 
   //Driving varibles
   private double intakeSpeed = 0;
+  
   //Sensor input varibles
 
   public Intake() {
@@ -21,7 +23,6 @@ public class Intake extends SubsystemBase {
 
   public void setIntakeSpeed(double speed){
     this.intakeSpeed = speed;
-    
   }
 
   @Override
