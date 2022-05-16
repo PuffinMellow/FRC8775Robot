@@ -5,17 +5,21 @@ import frc.robot.subsystems.Intake;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class RunIntakeForward extends CommandBase {
+public class RunIntake extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final Intake drivetrainSubsystem;
+  private double stopTime;
+  private double intakeSpeed;
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public RunIntakeForward(ExampleSubsystem subsystem) {
+  public RunIntake(ExampleSubsystem subsystem, double maxTime, double intakeSpeed) {
+    this.stopTime = System.getTimeMillis() + maxTime;
     this.intakeSubsystem = subsystem;
+    this.intakeSpeed = intakeSpeed;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(this.intakeSubsystem);
   }
@@ -23,7 +27,7 @@ public class RunIntakeForward extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-      this.intakeSubsystem.setIntakeSpeed(-0.5);
+      this.intakeSubsystem.setIntakeSpeed(this.intakeSpeed);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -39,6 +43,10 @@ public class RunIntakeForward extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    if(System.getTimeMillis() > this.stopTime) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
